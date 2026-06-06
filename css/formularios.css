@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:#d22163;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+}
+
+.contenedor{
+
+    width:100%;
+
+    max-width:700px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.15);
+}
+
+h1{
+
+    text-align:center;
+
+    color:#d22163;
+
+    margin-bottom:30px;
+
+    font-size:2rem;
+}
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+label{
+
+    font-size:.95rem;
+
+    color:#555;
+
+    font-weight:500;
+}
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    border:2px solid #e5e7eb;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:.95rem;
+
+    transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:#d22163;
+
+    box-shadow:
+    0 0 0 4px rgba(0,93,170,.15);
+}
+
+textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+}
+
+button{
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+button[type="submit"]{
+
+    background:
+    linear-gradient(
+    135deg,
+    #d22163,
+    #e84b86
+);
+
+    color:white;
+}
+
+button[type="submit"]:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 20px rgba(34,197,94,.25);
+}
+
+.btnVolver{
+
+    margin-top:10px;
+
+    background:#6b7280;
+
+    color:white;
+}
+
+.btnVolver:hover{
+
+    background:#4b5563;
+}
+
+.botones{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-top:15px;
+}
+
+@media(max-width:768px){
+
+    .contenedor{
+
+        padding:25px;
+    }
+
+    h1{
+
+        font-size:1.6rem;
+    }
+
+    .botones{
+
+        flex-direction:column;
+    }
+
+}
+#listaSocios,
+#listaSimpatizantes{
+
+    max-height:250px;
+
+    overflow-y:auto;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+}
+
+#listaSocios label,
+#listaSimpatizantes label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    cursor:pointer;
+}
+
+h3{
+
+    color:#d22163;
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+}

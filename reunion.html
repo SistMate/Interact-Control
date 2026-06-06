@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Registrar Reunión
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/formularios.css">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>
+        Registrar Reunión
+    </h1>
+
+    <form id="formReunion">
+
+        <label>
+            Tipo de Reunión
+        </label>
+
+        <select id="tipoReunion">
+
+            <option value="Ordinaria">
+                Ordinaria
+            </option>
+
+            <option value="Extraordinaria">
+                Extraordinaria
+            </option>
+
+            <option value="Capacitación">
+                Capacitación
+            </option>
+
+        </select>
+
+        <label>
+            Fecha y Hora
+        </label>
+
+        <input
+            type="datetime-local"
+            id="fechaHora">
+
+        <h3>
+            Asistencia de Socios
+        </h3>
+
+        <div id="listaSocios">
+
+        </div>
+
+        <h3>
+            Asistencia de Simpatizantes
+        </h3>
+
+        <div id="listaSimpatizantes">
+
+        </div>
+
+        <button type="submit">
+
+            Guardar Reunión
+
+        </button>
+        <div class="botones">
+
+        <button
+            type="button"
+            class="btnVolver"
+            onclick="window.location.href='dashboard.html'">
+
+            ← Volver al Menú
+
+        </button>
+
+</div>
+
+    </form>
+
+</div>
+
+<script
+    type="module"
+    src="js/reunion.js">
+</script>
+
+</body>
+
+</html>

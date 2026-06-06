@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Lista de Simpatizantes
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/socios.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="cabecera">
+
+            <h1>
+                Lista de Simpatizantes
+            </h1>
+
+            <div class="botones">
+
+                <button
+                    class="btnVolver"
+                    onclick="window.location.href='dashboard.html'">
+
+                    ← Menú Principal
+
+                </button>
+
+                <button
+                    class="btnNuevo"
+                    onclick="window.location.href='registrar-simpatizante.html'">
+
+                    Nuevo Simpatizante
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Nombre
+                    </th>
+
+                    <th>
+                        Celular
+                    </th>
+
+                    <th>
+                        Fecha Ingreso
+                    </th>
+
+                    <th>
+                        Acción
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaSimpatizantes">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script
+        type="module"
+        src="js/simpatizantes.js">
+    </script>
+
+</body>
+
+</html>

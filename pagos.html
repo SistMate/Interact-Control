@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Historial de Pagos
+    </title>
+
+    <link rel="stylesheet"
+          href="css/pagos.css">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="cabecera">
+
+        <h1>
+            Historial de Pagos
+        </h1>
+
+        <button
+            class="btnVolver"
+            onclick="window.location.href='dashboard.html'">
+
+            ← Menú Principal
+
+        </button>
+
+    </div>
+
+    <input
+        type="text"
+        id="buscar"
+        placeholder="Buscar socio...">
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Socio</th>
+                <th>Fecha</th>
+                <th>Motivo</th>
+                <th>Monto</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="tablaPagos">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script
+    type="module"
+    src="js/pagos.js">
+</script>
+
+</body>
+
+</html>

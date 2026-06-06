@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Registrar Actividad
+    </title>
+
+    <link
+        rel="stylesheet" href="css/formularios.css">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <h1>
+        Registrar Actividad
+    </h1>
+
+    <form id="formActividad">
+
+        <label>
+            Nombre de la Actividad
+        </label>
+
+        <input type="text" id="nombreActividad" placeholder="Ej. Campaña de Limpieza" required>
+
+        <label>
+            Fecha
+        </label>
+
+        <input type="date" id="fecha" required>
+
+        <h3>Asistencia de Socios</h3>
+
+        <div id="listaSocios">
+
+        </div>
+
+        <h3>Asistencia de Simpatizantes</h3>
+
+        <div id="listaSimpatizantes">
+
+        </div>
+
+        <button type="submit">
+
+            Guardar Actividad
+
+        </button>
+
+    </form>
+
+    <div class="botones">
+
+        <button
+            type="button"
+            class="btnVolver"
+            onclick="window.location.href='dashboard.html'">
+
+            ← Volver al Menú
+
+        </button>
+
+    </div>
+
+</div>
+
+<script
+    type="module"
+    src="js/actividad.js">
+</script>
+
+</body>
+
+</html>

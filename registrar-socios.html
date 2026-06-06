@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Registro de Socios</title>
+
+    <link
+        rel="stylesheet"
+        href="css/registrar-socios.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>
+            Registro de Socios
+        </h1>
+
+        <form id="formSocio">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre Completo"
+                required>
+
+            <input
+                type="text"
+                id="carnet"
+                placeholder="Número de Carnet"
+                required>
+
+            <label>
+                Fecha de Nacimiento
+            </label>
+
+            <input
+                type="date"
+                id="fechaNacimiento"
+                required>
+
+            <label>
+                Fecha de Juramento
+            </label>
+
+            <input
+                type="date"
+                id="fechaJuramento">
+
+            <input
+                type="email"
+                id="correo"
+                placeholder="Correo Electrónico">
+
+            <input
+                type="number"
+                id="celular"
+                placeholder="Celular">
+
+            <input
+                type="text"
+                id="ocupacion"
+                placeholder="Ocupación">
+
+            <input
+                type="text"
+                id="estudios"
+                placeholder="Estudios / Profesión">
+
+            <select id="estado">
+
+                <option value="Activo">
+                    Activo
+                </option>
+
+                <option value="Pasivo">
+                    Pasivo
+                </option>
+
+            </select>
+
+            <button type="submit">
+                Guardar Socio
+            </button>
+
+        </form>
+
+        <button
+            class="volver"
+            onclick="window.location.href='socios.html'">
+
+            Volver a Lista de Socios
+
+        </button>
+
+    </div>
+
+    <script
+        type="module"
+        src="js/registrar-socios.js">
+    </script>
+
+</body>
+
+</html>

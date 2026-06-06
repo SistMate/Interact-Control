@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>
+        Lista de Socios
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/socios.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <div class="cabecera">
+
+            <h1>
+                Lista de Socios
+            </h1>
+            
+            <button
+                class="btnVolver"
+                onclick="window.location.href='dashboard.html'">
+
+                ← Menú Principal
+
+                </button>
+            <button
+                class="btnNuevo"
+                onclick="window.location.href='registrar-socios.html'">
+
+                Nuevo Socio
+
+            </button>
+
+        </div>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Nombre
+                    </th>
+
+                    <th>
+                        Celular
+                    </th>
+
+                    <th>
+                        Fecha de Nacimiento
+                    </th>
+
+                    <th>
+                        Acción
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaSocios">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script
+        type="module"
+        src="js/socios.js">
+    </script>
+
+</body>
+
+</html>

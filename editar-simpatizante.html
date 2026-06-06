@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Editar Simpatizante
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/formularios.css">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>
+            Editar Simpatizante
+        </h1>
+
+        <form id="formEditar">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre Completo"
+                required>
+
+            <input
+                type="number"
+                id="celular"
+                placeholder="Celular">
+
+            <input
+                type="date"
+                id="fechaIngreso">
+
+            <button type="submit">
+
+                Guardar Cambios
+
+            </button>
+
+        </form>
+
+        <div class="botones">
+
+            <button
+                class="btnVolver"
+                onclick="window.location.href='simpatizantes.html'">
+
+                ← Volver
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script
+        type="module"
+        src="js/editar-simpatizante.js">
+    </script>
+
+</body>
+
+</html>
