@@ -3,7 +3,7 @@ from "./firebase-config.js";
 
 import {
     collection,
-     getDocs,
+    getDocs,
     deleteDoc,
     doc
 }
