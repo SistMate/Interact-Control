@@ -102,7 +102,7 @@ form.addEventListener(
 
                 doc(
                     db,
-                    "Socios",
+                    "socios",
                     id
                 ),
 
