@@ -16,7 +16,7 @@ async function cargarDatos(){
 
     const sociosSnap =
     await getDocs(
-        collection(db,"Socios")
+        collection(db,"socios")
     );
 
     const reunionesSnap =

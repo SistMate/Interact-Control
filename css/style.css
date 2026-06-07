@@ -15,9 +15,9 @@ body{
     align-items: center;
     background: linear-gradient(
     135deg,
-    #d22163,
-    #ee468d,
-    #f571ad
+    #0099d9,
+    #0cb0eb,
+    #36c7fa
    );
 }
 
@@ -48,7 +48,7 @@ body{
 
 .logo h1{
     margin-top: 10px;
-    color: #d22163;
+    color: #0099D9;
     font-size: 1.6rem;
 }
 
@@ -89,8 +89,8 @@ body{
     border: none;
     background: linear-gradient(
     135deg,
-    #d22163,
-    #e84b86
+    #0099d9,
+    #0cb0eb
     );
     color: white;
     padding: 14px;

@@ -20,7 +20,7 @@ async function cargarSocios() {
     tabla.innerHTML = "";
 
     const querySnapshot = await getDocs(
-        collection(db, "Socios")
+        collection(db, "socios")
     );
 
     querySnapshot.forEach((documento) => {
@@ -30,8 +30,8 @@ async function cargarSocios() {
         tabla.innerHTML += `
             <tr>
                 <td>${socio["Nombre Completo"] || ""}</td>
-                <td>${socio["Celular"] || ""}</td>
-                <td>${socio["FechaNacimiento"] || ""}</td>
+                <td>${socio["celular"] || ""}</td>
+                <td>${socio.fechaNacimiento?socio.fechaNacimiento.toDate().toLocaleDateString("es-BO"):""}</td>
                  <td>
                     <button
                     class="btnEditar"

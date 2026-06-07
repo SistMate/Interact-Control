@@ -24,7 +24,7 @@ async function cargarSocios(){
     await getDocs(
         collection(
             db,
-            "Socios"
+            "socios"
         )
     );
 

@@ -1,9 +1,11 @@
-import { db } from "./firebase-config.js";
+import { db }
+from "./firebase-config.js";
 
 import {
     doc,
     getDoc,
-    updateDoc
+    updateDoc,
+    Timestamp
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
@@ -22,43 +24,65 @@ document.getElementById(
 
 async function cargarSocio(){
 
-    const docRef =
-    doc(db,"Socios",id);
+    try{
 
-    const docSnap =
-    await getDoc(docRef);
+        const docRef =
+        doc(
+            db,
+            "Socios",
+            id
+        );
 
-    if(docSnap.exists()){
+        const docSnap =
+        await getDoc(
+            docRef
+        );
 
-        const socio =
-        docSnap.data();
+        if(docSnap.exists()){
 
-        document.getElementById("nombre").value =
-        socio["Nombre Completo"] || "";
+            const socio =
+            docSnap.data();
 
-        document.getElementById("carnet").value =
-        socio["NúmeroCarnet"] || "";
+            document.getElementById(
+                "nombre"
+            ).value =
+            socio["Nombre Completo"] || "";
 
-        document.getElementById("fechaNacimiento").value =
-        socio["FechaNacimiento"] || "";
+            document.getElementById(
+                "celular"
+            ).value =
+            socio.celular || "";
 
-        document.getElementById("fechaJuramento").value =
-        socio["FechaJuramento"] || "";
+            document.getElementById(
+                "correo"
+            ).value =
+            socio.correoElectronico || "";
 
-        document.getElementById("correo").value =
-        socio["CorreoElectronico"] || "";
+            if(
+                socio.fechaNacimiento &&
+                typeof socio.fechaNacimiento.toDate === "function"
+            ){
 
-        document.getElementById("celular").value =
-        socio["Celular"] || "";
+                document.getElementById(
+                    "fechaNacimiento"
+                ).value =
+                socio.fechaNacimiento
+                .toDate()
+                .toISOString()
+                .split("T")[0];
 
-        document.getElementById("ocupacion").value =
-        socio["Ocupacion"] || "";
+            }
 
-        document.getElementById("estudios").value =
-        socio["EstudiosProfesion"] || "";
+        }
 
-        document.getElementById("estado").value =
-        socio["Estado"] || "Activo";
+    }
+    catch(error){
+
+        console.error(error);
+
+        alert(
+            "Error al cargar socio"
+        );
 
     }
 
@@ -67,50 +91,72 @@ async function cargarSocio(){
 cargarSocio();
 
 form.addEventListener(
-"submit",
-async(e)=>{
+    "submit",
+    async(e)=>{
 
-    e.preventDefault();
+        e.preventDefault();
 
-    await updateDoc(
-        doc(db,"Socios",id),
-        {
-            "Nombre Completo":
-            document.getElementById("nombre").value,
+        try{
 
-            "NúmeroCarnet":
-            document.getElementById("carnet").value,
+            await updateDoc(
 
-            "FechaNacimiento":
-            document.getElementById("fechaNacimiento").value,
+                doc(
+                    db,
+                    "Socios",
+                    id
+                ),
 
-            "FechaJuramento":
-            document.getElementById("fechaJuramento").value,
+                {
 
-            "CorreoElectronico":
-            document.getElementById("correo").value,
+                    "Nombre Completo":
+                    document.getElementById(
+                        "nombre"
+                    ).value,
 
-            "Celular":
-            Number(
-                document.getElementById("celular").value
-            ),
+                    celular:
+                    document.getElementById(
+                        "celular"
+                    ).value,
 
-            "Ocupacion":
-            document.getElementById("ocupacion").value,
+                    correoElectronico:
+                    document.getElementById(
+                        "correo"
+                    ).value,
 
-            "EstudiosProfesion":
-            document.getElementById("estudios").value,
+                    fechaNacimiento:
+                    Timestamp.fromDate(
 
-            "Estado":
-            document.getElementById("estado").value
+                        new Date(
+
+                            document.getElementById(
+                                "fechaNacimiento"
+                            ).value
+
+                        )
+
+                    )
+
+                }
+
+            );
+
+            alert(
+                "Socio actualizado correctamente"
+            );
+
+            window.location.href =
+            "socios.html";
+
         }
-    );
+        catch(error){
 
-    alert(
-        "Socio actualizado correctamente"
-    );
+            console.error(error);
 
-    window.location.href =
-    "socios.html";
+            alert(
+                "Error al actualizar socio"
+            );
 
-});
+        }
+
+    }
+);

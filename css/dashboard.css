@@ -9,11 +9,11 @@
 
 body{
     min-height:100vh;
-    background:#faa7ce;
+    background:#36c7fa;
 }
 
 header{
-    background:linear-gradient(135deg,#D22163);
+    background:linear-gradient(135deg,#0099D9);
     color:white;
     padding:20px 30px;
 
@@ -35,7 +35,7 @@ header{
 
 #btnLogout{
     background:white;
-    color:#D22163;
+    color:#0099D9;
 
     border:none;
 
@@ -97,7 +97,7 @@ main{
 }
 
 .card h3{
-    color:#d22163;
+    color:#0099D9;
     margin-bottom:10px;
 }
 

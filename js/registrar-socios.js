@@ -3,73 +3,86 @@ from "./firebase-config.js";
 
 import {
     collection,
-    addDoc
+    addDoc,
+    Timestamp
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 const formSocio =
-document.getElementById("formSocio");
+document.getElementById(
+    "formSocio"
+);
 
 formSocio.addEventListener(
-"submit",
-async (e) => {
+    "submit",
+    async(e)=>{
 
-    e.preventDefault();
+        e.preventDefault();
 
-    try {
+        try{
 
-        await addDoc(
-            collection(
-                db,
-                "Socios"
-            ),
-            {
-                "Nombre Completo":
-                document.getElementById("nombre").value,
+            await addDoc(
 
-                "NúmeroCarnet":
-                document.getElementById("carnet").value,
-
-                "FechaNacimiento":
-                document.getElementById("fechaNacimiento").value,
-
-                "FechaJuramento":
-                document.getElementById("fechaJuramento").value,
-
-                "CorreoElectronico":
-                document.getElementById("correo").value,
-
-                "Celular":
-                Number(
-                    document.getElementById("celular").value
+                collection(
+                    db,
+                    "socios"
                 ),
 
-                "Ocupacion":
-                document.getElementById("ocupacion").value,
+                {
 
-                "EstudiosProfesion":
-                document.getElementById("estudios").value,
+                    "Nombre Completo":
+                    document.getElementById(
+                        "nombre"
+                    ).value,
 
-                "Estado":
-                document.getElementById("estado").value
-            }
-        );
+                    celular:
+                    document.getElementById(
+                        "celular"
+                    ).value,
 
-        alert(
-            "Socio registrado correctamente"
-        );
+                    correoElectronico:
+                    document.getElementById(
+                        "correo"
+                    ).value,
 
-        formSocio.reset();
+                    fechaNacimiento:
+                    Timestamp.fromDate(
+
+                        new Date(
+
+                            document.getElementById(
+                                "fechaNacimiento"
+                            ).value
+
+                        )
+
+                    )
+
+                }
+
+            );
+
+            alert(
+                "Socio registrado correctamente"
+            );
+
+            formSocio.reset();
+
+            window.location.href =
+            "socios.html";
+
+        }
+        catch(error){
+
+            console.error(
+                error
+            );
+
+            alert(
+                "Error al registrar socio"
+            );
+
+        }
 
     }
-    catch(error){
-
-        console.error(error);
-
-        alert(
-            "Error al registrar socio"
-        );
-
-    }
-
-});
+);

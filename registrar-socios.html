@@ -27,16 +27,35 @@
 
         <form id="formSocio">
 
-            <input
-                type="text"
-                id="nombre"
-                placeholder="Nombre Completo"
-                required>
+            <label>
+                Nombre Completo
+            </label>
 
             <input
                 type="text"
-                id="carnet"
-                placeholder="Número de Carnet"
+                id="nombre"
+                placeholder="Escribe el nombre completo del socio"
+                required>
+
+                <label>
+                Celular
+                 </label>
+
+            
+                <input
+                type="text"
+                id="celular"
+                placeholder="Numero deCelular"
+                required>
+
+                <label>
+                Correo Electrónico
+                </label>
+
+            <input
+                type="email"
+                id="correo"
+                placeholder="Correo Electrónico"
                 required>
 
             <label>
@@ -47,46 +66,6 @@
                 type="date"
                 id="fechaNacimiento"
                 required>
-
-            <label>
-                Fecha de Juramento
-            </label>
-
-            <input
-                type="date"
-                id="fechaJuramento">
-
-            <input
-                type="email"
-                id="correo"
-                placeholder="Correo Electrónico">
-
-            <input
-                type="number"
-                id="celular"
-                placeholder="Celular">
-
-            <input
-                type="text"
-                id="ocupacion"
-                placeholder="Ocupación">
-
-            <input
-                type="text"
-                id="estudios"
-                placeholder="Estudios / Profesión">
-
-            <select id="estado">
-
-                <option value="Activo">
-                    Activo
-                </option>
-
-                <option value="Pasivo">
-                    Pasivo
-                </option>
-
-            </select>
 
             <button type="submit">
                 Guardar Socio

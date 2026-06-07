@@ -11,7 +11,7 @@ body{
 
     min-height:100vh;
 
-    background:#d22163;
+    background:#0099d9;
 
     display:flex;
 
@@ -42,7 +42,7 @@ h1{
 
     text-align:center;
 
-    color:#d22163;
+    color:#0099d9;
 
     margin-bottom:30px;
 
@@ -90,7 +90,7 @@ input:focus,
 select:focus,
 textarea:focus{
 
-    border-color:#d22163;
+    border-color:#0099d9;
 
     box-shadow:
     0 0 0 4px rgba(0,93,170,.15);
@@ -125,8 +125,8 @@ button[type="submit"]{
     background:
     linear-gradient(
     135deg,
-    #d22163,
-    #e84b86
+    #0099d9,
+    #0066cc
 );
 
     color:white;
@@ -209,7 +209,7 @@ button[type="submit"]:hover{
 
 h3{
 
-    color:#d22163;
+    color:#0099d9;
 
     margin-top:15px;
 

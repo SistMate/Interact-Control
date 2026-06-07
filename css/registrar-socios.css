@@ -7,7 +7,7 @@
 
 body{
 
-    background:#d22163;
+    background:#0099D9;
 
     display:flex;
 
@@ -38,7 +38,7 @@ h1{
 
     margin-bottom:25px;
 
-    color:#d22163;
+    color:#0099D9;
 }
 
 form{
@@ -68,7 +68,7 @@ button{
 
     border-radius:10px;
 
-    background:#d22163;
+    background:#0099D9;
 
     color:white;
 
