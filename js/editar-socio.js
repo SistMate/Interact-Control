@@ -29,7 +29,7 @@ async function cargarSocio(){
         const docRef =
         doc(
             db,
-            "Socios",
+            "socios",
             id
         );
 
