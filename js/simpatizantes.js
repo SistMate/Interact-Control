@@ -5,7 +5,7 @@ import {
     collection,
      getDocs,
     deleteDoc,
-    getDocs
+    doc
 }
 from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
