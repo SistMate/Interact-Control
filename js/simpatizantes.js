@@ -94,7 +94,7 @@ async function(id){
     await deleteDoc(
         doc(
             db,
-            "Simpatizantes",
+            "Simpatizante",
             id
         )
     );
