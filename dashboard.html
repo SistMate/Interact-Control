@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interact Cochabamba Control</title>
+    <title>Felipe's Control</title>
 
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
@@ -13,26 +13,36 @@
 
     <header>
 
-        <div>
-            <h1>Interact Cochabamba Control</h1>
-            <p id="nombreUsuario">Cargando...</p>
+    <div class="header-info">
+
+        <h1>Felipe's Control</h1>
+
+        <p id="nombreUsuario"></p>
+
+        <p id="cargoUsuario"></p>
+
+        <div class="felipe">
+
+            <img src="img/felipeLogo4.png" alt="Felipe">
+
+            <span id="mensajeFelipe"></span>
+
         </div>
 
-        <button id="btnLogout">
-            CERRAR SESIÓN
-        </button>
+    </div>
 
-    </header>
+    <button id="btnLogout">
+        CERRAR SESIÓN
+    </button>
 
+</header>
     <main>
 
         <div class="card" onclick="location.href='reunion.html'">
-            
             <h3>ASISTENCIA REUNIONES</h3>
         </div>
 
         <div class="card" onclick="location.href='actividad.html'">
-            
             <h3>ASISTENCIA ACTIVIDADES</h3>
         </div>
 
@@ -53,12 +63,17 @@
         </div>
 
     </main>
-            <div class="footer">
-                <p>
-                    &copy; 2026 Interact Club Cochabamba
-                </p>
-            </div>
+
+    <footer class="footer">
+
+        <p>
+            &copy; 2026 Interact Club Cochabamba
+        </p>
+
+    </footer>
+
     <script type="module" src="js/dashboard.js"></script>
-              
+
 </body>
+
 </html>
