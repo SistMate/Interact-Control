@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 *{
     margin:0;
     padding:0;
@@ -7,14 +8,27 @@
     font-family:'Poppins',sans-serif;
 }
 
+
+
 body{
 
     min-height:100vh;
 
-    background:#0099d9;
+    background:
+    linear-gradient(
+        135deg,
+        #0099d9,
+        #0cb0eb,
+        #36c7fa
+    );
 
     padding:30px;
+
 }
+
+
+
+/* CONTENEDOR */
 
 .contenedor{
 
@@ -22,15 +36,32 @@ body{
 
     margin:auto;
 
-    background:white;
-
-    border-radius:20px;
 
     padding:30px;
 
+
+    border-radius:20px;
+
+
     box-shadow:
-    0 15px 40px rgba(0,0,0,.15);
+    0 15px 40px rgba(0,0,0,.25);
+
+
+    background:
+    url("../img/felipeLogo4.png") center center / 45% no-repeat,
+    rgba(255,255,255,.88);
+
+
+    backdrop-filter:blur(10px);
+
+
+    overflow:hidden;
+
 }
+
+
+
+/* CABECERA */
 
 .cabecera{
 
@@ -40,215 +71,378 @@ body{
 
     align-items:center;
 
+
     margin-bottom:25px;
+
 
     flex-wrap:wrap;
 
+
     gap:15px;
+
 }
+
+
 
 h1{
 
     color:#0099d9;
 
     font-size:2rem;
+
 }
+
+
+
+/* BOTON NUEVO */
 
 .btnNuevo{
 
     border:none;
 
+
     background:
+
     linear-gradient(
-    135deg,
-    #0099d9,
-    #0066cc
-); 
+        135deg,
+        #0099d9,
+        #0066cc
+    );
+
 
     color:white;
 
+
     padding:12px 20px;
+
 
     border-radius:12px;
 
+
     cursor:pointer;
+
 
     font-weight:600;
 
+
     transition:.3s;
+
 }
+
+
 
 .btnNuevo:hover{
 
     transform:translateY(-2px);
 
+
     box-shadow:
-    0 10px 20px rgba(34,197,94,.25);
+
+    0 10px 20px rgba(0,93,170,.3);
+
 }
+
+
+
+/* BOTON VOLVER */
 
 .btnVolver{
 
     border:none;
 
+
     background:#6b7280;
+
 
     color:white;
 
+
     padding:12px 20px;
+
 
     border-radius:12px;
 
+
     cursor:pointer;
+
 
     font-weight:600;
 
+
     transition:.3s;
+
 }
+
+
 
 .btnVolver:hover{
 
     background:#4b5563;
+
 }
+
+
+
+/* TABLA */
 
 .tabla-container{
 
     overflow-x:auto;
+
 }
+
+
 
 table{
 
     width:100%;
 
+
     border-collapse:collapse;
 
+
     min-width:700px;
+
+
+    background:rgba(255,255,255,.65);
+
+    border-radius:15px;
+
+    overflow:hidden;
+
 }
+
+
+
+/* CABECERA TABLA */
 
 thead{
 
-    background:#0099d9;
+    background:
+
+    linear-gradient(
+        135deg,
+        #0099d9,
+        #0066cc
+    );
+
 
     color:white;
+
 }
+
+
 
 thead th{
 
     padding:15px;
 
     text-align:left;
+
 }
+
+
+
+/* FILAS */
 
 tbody tr{
 
     border-bottom:
-    1px solid #e5e7eb;
+
+    1px solid rgba(0,0,0,.08);
+
 
     transition:.2s;
+
 }
+
+
 
 tbody tr:hover{
 
-    background:#f8fafc;
+    background:rgba(0,153,217,.08);
+
 }
+
+
 
 tbody td{
 
     padding:14px;
+
 }
+
+
+
+/* ESTADOS */
 
 .estado-activo{
 
     background:#dcfce7;
 
+
     color:#166534;
+
 
     padding:5px 12px;
 
+
     border-radius:20px;
+
 
     font-size:.85rem;
 
+
     font-weight:600;
+
 }
+
+
 
 .estado-inactivo{
 
     background:#fee2e2;
 
+
     color:#991b1b;
+
 
     padding:5px 12px;
 
+
     border-radius:20px;
+
 
     font-size:.85rem;
 
+
     font-weight:600;
+
 }
 
-.btnEditar{
 
-    border:none;
 
-    background:#f59e0b;
-
-    color:white;
-
-    padding:8px 12px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-
-    margin-right:5px;
-}
-
-.btnEliminar{
-
-    border:none;
-
-    background:#dc2626;
-
-    color:white;
-
-    padding:8px 12px;
-
-    border-radius:8px;
-
-    cursor:pointer;
-}
-
-.btnEditar:hover,
-.btnEliminar:hover{
-
-    opacity:.9;
-}
+/* ACCIONES */
 
 .acciones{
 
     display:flex;
 
     gap:5px;
+
 }
 
+
+
+/* BOTON EDITAR */
+
+.btnEditar{
+
+    border:none;
+
+
+    background:#f59e0b;
+
+
+    color:white;
+
+
+    padding:8px 12px;
+
+
+    border-radius:8px;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+}
+
+
+
+/* BOTON ELIMINAR */
+
+.btnEliminar{
+
+    border:none;
+
+
+    background:#dc2626;
+
+
+    color:white;
+
+
+    padding:8px 12px;
+
+
+    border-radius:8px;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+}
+
+
+
+.btnEditar:hover,
+.btnEliminar:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.9;
+
+}
+
+
+
+/* RESPONSIVE */
+
 @media(max-width:768px){
+
+
+    body{
+
+        padding:20px;
+
+    }
+
+
+    .contenedor{
+
+        padding:20px;
+
+    }
+
 
     .cabecera{
 
         flex-direction:column;
 
         align-items:stretch;
+
     }
+
 
     h1{
 
         text-align:center;
+
+        font-size:1.6rem;
+
     }
+
 
     .btnNuevo,
     .btnVolver{
 
         width:100%;
+
     }
 
 }
