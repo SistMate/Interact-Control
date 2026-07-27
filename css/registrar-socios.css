@@ -1,36 +1,88 @@
+/* Importar fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Poppins,sans-serif;
+    font-family:'Poppins',sans-serif;
 }
+
 
 body{
 
-    background:#0099D9;
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #0099d9,
+        #0cb0eb,
+        #36c7fa
+    );
 
     display:flex;
 
     justify-content:center;
 
+    align-items:center;
+
     padding:40px;
+
 }
+
+
+
+/* CONTENEDOR PRINCIPAL */
 
 .contenedor{
 
     width:100%;
-
     max-width:700px;
 
-    background:white;
-
-    padding:30px;
+    padding:35px;
 
     border-radius:20px;
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,.1);
+    0 15px 40px rgba(0,0,0,.25);
+
+
+    background-image:
+    url("../img/felipeLogo5.png");
+
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-size:70%;
+
+
+    background-color:rgba(255,255,255,.95);
+
+
+    backdrop-filter:blur(10px);
+
+    position:relative;
+
+    overflow:hidden;
+
 }
+
+/* Todo el contenido encima */
+
+.contenedor > *{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+
+/* TITULO */
 
 h1{
 
@@ -39,7 +91,14 @@ h1{
     margin-bottom:25px;
 
     color:#0099D9;
+
+    font-size:2rem;
+
 }
+
+
+
+/* FORMULARIO */
 
 form{
 
@@ -47,40 +106,121 @@ form{
 
     flex-direction:column;
 
-    gap:12px;
-}
+    gap:15px;
 
+}
 input,
 select{
 
-    padding:12px;
+    width:100%;
 
-    border:1px solid #ddd;
+    padding:14px;
 
-    border-radius:10px;
+    border-radius:12px;
+
+    outline:none;
+
+
+    background:transparent;
+
+
+    border:2px solid rgba(255,255,255,0.5);
+
+
+    color:#000;
+
+    font-size:.95rem;
+
+
+    transition:all .3s ease;
+
 }
 
+
+
+/* Cuando haces click */
+
+input:focus,
+select:focus{
+
+    background:#ffffff;
+
+    border-color:#0099d9;
+
+
+    box-shadow:
+    0 0 0 4px rgba(0,153,217,.15);
+
+}
+
+
+
+/* Placeholder */
+
+input::placeholder{
+
+    color:rgba(0,0,0,.5);
+
+}
+
+
+
+/* Opciones del select */
+
+select option{
+
+    color:#000;
+
+    background:white;
+
+}
+
+/* BOTONES */
+
 button{
+
+    width:100%;
 
     padding:14px;
 
     border:none;
 
-    border-radius:10px;
+    border-radius:12px;
 
-    background:#0099D9;
+
+    background:linear-gradient(
+        135deg,
+        #0099d9,
+        #0cb0eb
+    );
+
 
     color:white;
 
     cursor:pointer;
 
     font-weight:600;
+
+    font-size:1rem;
+
+    transition:.3s;
+
 }
+
+
 
 button:hover{
 
-    opacity:.9;
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 20px rgba(0,93,170,.3);
+
 }
+
+
+
+/* BOTON VOLVER */
 
 .volver{
 
@@ -89,4 +229,56 @@ button:hover{
     margin-top:15px;
 
     background:#666;
+
+}
+
+
+
+.volver:hover{
+
+    background:#555;
+
+}
+
+
+
+/* LABELS SI LOS TIENES */
+
+label{
+
+    font-size:.9rem;
+
+    color:#333;
+
+    font-weight:500;
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+
+
+    body{
+
+        padding:20px;
+
+    }
+
+
+    .contenedor{
+
+        padding:25px;
+
+    }
+
+
+    h1{
+
+        font-size:1.6rem;
+
+    }
+
 }
