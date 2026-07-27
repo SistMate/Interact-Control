@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
 }
+
 
 body{
 
@@ -19,23 +21,51 @@ body{
     );
 
     padding:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 }
+
+
+
+/* CONTENEDOR */
 
 .contenedor{
 
+    width:100%;
+
     max-width:900px;
 
-    margin:auto;
-
-    background:white;
-
-    border-radius:20px;
 
     padding:35px;
 
+
+    border-radius:20px;
+
+
     box-shadow:
-    0 15px 40px rgba(0,0,0,.15);
+    0 15px 40px rgba(0,0,0,.25);
+
+
+    background:
+    url("../img/felipeLogo5.png") center center / 60% no-repeat,
+    rgba(255,255,255,.85);
+
+
+    backdrop-filter:blur(10px);
+
+
+    position:relative;
+
+    overflow:hidden;
 }
+
+
+
+/* CABECERA */
 
 .cabecera{
 
@@ -52,12 +82,19 @@ body{
     gap:15px;
 }
 
+
+
 h1{
 
     color:#005daa;
 
     font-size:2rem;
+
 }
+
+
+
+/* FORMULARIO */
 
 form{
 
@@ -66,8 +103,11 @@ form{
     grid-template-columns:
     repeat(auto-fit,minmax(280px,1fr));
 
+
     gap:20px;
 }
+
+
 
 .grupo{
 
@@ -78,122 +118,216 @@ form{
     gap:8px;
 }
 
+
+
 label{
 
-    color:#555;
+    color:#000;
 
     font-size:.95rem;
 
     font-weight:500;
 }
 
+
+
+/* INPUTS TRANSPARENTES */
+
 input,
 select{
 
     padding:14px;
 
-    border:2px solid #e5e7eb;
 
     border-radius:12px;
 
+
     outline:none;
 
-    transition:.3s;
+
+    background:transparent;
+
+
+    border:2px solid rgba(255,255,255,.6);
+
+
+    color:#000;
+
 
     font-size:.95rem;
+
+
+    transition:all .3s ease;
+
 }
+
+
+
+input::placeholder{
+
+    color:rgba(0,0,0,.5);
+
+}
+
+
 
 input:focus,
 select:focus{
 
+
+    background:white;
+
+
     border-color:#005daa;
 
+
     box-shadow:
+
     0 0 0 4px rgba(0,93,170,.15);
+
 }
+
+
+
+/* BOTÓN GUARDAR */
 
 .btnGuardar{
 
+
     grid-column:1/-1;
+
 
     border:none;
 
+
     padding:15px;
+
 
     border-radius:12px;
 
+
     background:
+
     linear-gradient(
         135deg,
         #16a34a,
         #22c55e
     );
 
+
     color:white;
+
 
     font-size:1rem;
 
+
     font-weight:600;
+
 
     cursor:pointer;
 
+
     transition:.3s;
+
 }
+
+
 
 .btnGuardar:hover{
 
+
     transform:translateY(-2px);
 
+
     box-shadow:
+
     0 10px 20px rgba(34,197,94,.25);
+
 }
+
+
+
+/* BOTÓN VOLVER */
 
 .btnVolver{
 
+
     border:none;
+
 
     background:#6b7280;
 
+
     color:white;
+
 
     padding:12px 18px;
 
+
     border-radius:10px;
+
 
     cursor:pointer;
 
+
     font-weight:600;
 
+
     transition:.3s;
+
 }
+
+
 
 .btnVolver:hover{
 
     background:#4b5563;
+
 }
 
+
+
+/* RESPONSIVE */
+
 @media(max-width:768px){
+
+
+    .contenedor{
+
+        padding:25px;
+
+    }
+
 
     .cabecera{
 
         flex-direction:column;
 
         align-items:stretch;
+
     }
+
 
     .btnVolver{
 
         width:100%;
+
     }
+
 
     h1{
 
         text-align:center;
+
+        font-size:1.6rem;
+
     }
+
 
     form{
 
         grid-template-columns:1fr;
+
     }
 
 }
