@@ -1,3 +1,6 @@
+/* ===========================
+   FUENTE
+=========================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
@@ -7,67 +10,135 @@
     font-family:'Poppins',sans-serif;
 }
 
+/* ===========================
+   BODY
+=========================== */
+
 body{
     min-height:100vh;
-    background:#36c7fa;
+    background:linear-gradient(
+        135deg,
+        #36c7fa,
+        #23b9ef,
+        #17ace8
+    );
 }
+
+/* ===========================
+   HEADER
+=========================== */
 
 header{
-    background:linear-gradient(135deg,#0099D9);
-    color:white;
-    padding:20px 30px;
-
     display:flex;
     justify-content:space-between;
+    align-items:flex-start;
+
+    padding:25px 35px;
+
+    background:linear-gradient(
+        135deg,
+        #0099D9,
+        #0cb0eb
+    );
+
+    color:white;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.18);
+}
+
+.header-info h1{
+    font-size:2.3rem;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.header-info p{
+    margin:2px 0;
+    font-size:1rem;
+}
+
+/* ===========================
+   FELIPE
+=========================== */
+
+.felipe{
+    display:flex;
     align-items:center;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.15);
+    gap:15px;
+    margin-top:18px;
 }
 
-.user-info h1{
-    font-size:1.8rem;
+.felipe img{
+    width:70px;
+    height:auto;
+
+    animation:flotar 3s ease-in-out infinite;
 }
 
-.user-info p{
-    margin-top:5px;
-    opacity:.9;
+.felipe span{
+    color:white;
+    font-size:1.2rem;
+    font-weight:600;
+    transition:opacity .5s;
 }
+
+/* ===========================
+   BOTON
+=========================== */
 
 #btnLogout{
+
     background:white;
+
     color:#0099D9;
 
     border:none;
 
-    padding:12px 20px;
+    padding:14px 24px;
 
-    border-radius:12px;
+    border-radius:14px;
 
     cursor:pointer;
 
-    font-weight:600;
+    font-weight:700;
 
     transition:.3s;
+
+    align-self:flex-start;
 }
 
 #btnLogout:hover{
-    transform:translateY(-2px);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.20);
 }
 
+/* ===========================
+   MENU
+=========================== */
+
 main{
+
     padding:40px;
 
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
+        repeat(auto-fit,minmax(260px,1fr));
 
     gap:25px;
 }
 
+/* ===========================
+   TARJETAS
+=========================== */
+
 .card{
 
-    background:white;
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(10px);
 
     border-radius:20px;
 
@@ -77,44 +148,116 @@ main{
 
     cursor:pointer;
 
-    transition:.3s;
+    transition:.35s;
 
     box-shadow:
-    0 5px 20px rgba(0,0,0,.08);
+        0 6px 20px rgba(0,0,0,.10);
 }
 
 .card:hover{
 
-    transform:translateY(-8px);
+    transform:
+        translateY(-8px)
+        scale(1.02);
 
     box-shadow:
-    0 12px 25px rgba(0,93,170,.18);
-}
-
-.card .icon{
-    font-size:4rem;
-    margin-bottom:15px;
+        0 15px 30px rgba(0,93,170,.25);
 }
 
 .card h3{
+
     color:#0099D9;
-    margin-bottom:10px;
+
+    font-size:1.35rem;
+
+    font-weight:700;
 }
 
 .card p{
+
+    margin-top:10px;
+
     color:#777;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    text-align:center;
+
+    padding:20px;
+
+    color:rgba(255,255,255,.85);
+
     font-size:.9rem;
 }
 
-.footer{
-    text-align:center;
-    padding:20px;
-    color:#999;
-    font-size:.85rem;
+/* ===========================
+   ANIMACION FELIPE
+=========================== */
+
+@keyframes flotar{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
 }
-.footer{
-    margin-top: 20px;
-    text-align: center;
-    color: #535353;
-    font-size: .8rem;
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        align-items:flex-start;
+    }
+
+    #btnLogout{
+
+        width:100%;
+    }
+
+    .header-info h1{
+
+        font-size:1.8rem;
+    }
+
+    .felipe img{
+
+        width:60px;
+    }
+
+    .felipe span{
+
+        font-size:1rem;
+    }
+
+}
+.header-info p{
+    margin:2px 0;
+    font-size:1rem;
+}
+
+#cargoUsuario{
+    color:rgba(255,255,255,.9);
+    font-size:.95rem;
+    font-weight:500;
 }
