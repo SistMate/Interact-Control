@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 *{
     margin:0;
     padding:0;
@@ -7,11 +8,19 @@
     font-family:'Poppins',sans-serif;
 }
 
+
 body{
 
     min-height:100vh;
 
-    background:#0099d9;
+    background:
+    linear-gradient(
+        135deg,
+        #0099d9,
+        #0cb0eb,
+        #36c7fa
+    );
+
 
     display:flex;
 
@@ -20,7 +29,12 @@ body{
     align-items:center;
 
     padding:30px;
+
 }
+
+
+
+/* CONTENEDOR */
 
 .contenedor{
 
@@ -28,15 +42,34 @@ body{
 
     max-width:700px;
 
-    background:white;
-
-    border-radius:20px;
 
     padding:35px;
 
+
+    border-radius:20px;
+
+
     box-shadow:
-    0 15px 40px rgba(0,0,0,.15);
+    0 15px 40px rgba(0,0,0,.25);
+
+
+
+    background:
+    url("../img/felipeLogo5.png") center center / 65% no-repeat,
+    rgba(255,255,255,.85);
+
+
+
+    backdrop-filter:blur(10px);
+
+
+    overflow:hidden;
+
 }
+
+
+
+/* TITULO */
 
 h1{
 
@@ -44,10 +77,17 @@ h1{
 
     color:#0099d9;
 
+
     margin-bottom:30px;
 
+
     font-size:2rem;
+
 }
+
+
+
+/* FORMULARIO */
 
 form{
 
@@ -55,163 +95,300 @@ form{
 
     flex-direction:column;
 
+
     gap:15px;
+
 }
+
+
+
+/* LABEL */
 
 label{
 
     font-size:.95rem;
 
-    color:#555;
+
+    color:#000;
+
 
     font-weight:500;
+
 }
+
+
+
+/* CAMPOS */
 
 input,
 select,
 textarea{
 
+
     width:100%;
+
 
     padding:14px;
 
-    border:2px solid #e5e7eb;
 
     border-radius:12px;
 
+
     outline:none;
+
+
+    background:transparent;
+
+
+    border:2px solid rgba(255,255,255,.6);
+
+
+    color:#000;
+
 
     font-size:.95rem;
 
-    transition:.3s;
+
+    transition:all .3s ease;
+
 }
+
+
+
+input::placeholder,
+textarea::placeholder{
+
+    color:rgba(0,0,0,.5);
+
+}
+
+
 
 input:focus,
 select:focus,
 textarea:focus{
 
+
+    background:white;
+
+
     border-color:#0099d9;
 
+
     box-shadow:
-    0 0 0 4px rgba(0,93,170,.15);
+
+    0 0 0 4px rgba(0,153,217,.15);
+
 }
+
+
 
 textarea{
 
     resize:vertical;
 
+
     min-height:120px;
+
 }
+
+
+
+/* BOTONES */
 
 button{
 
+
     border:none;
+
 
     border-radius:12px;
 
+
     padding:14px;
+
 
     font-size:1rem;
 
+
     font-weight:600;
+
 
     cursor:pointer;
 
+
     transition:.3s;
+
 }
+
+
+
+/* GUARDAR */
 
 button[type="submit"]{
 
+
     background:
+
     linear-gradient(
-    135deg,
-    #0099d9,
-    #0066cc
-);
+        135deg,
+        #0099d9,
+        #0066cc
+    );
+
 
     color:white;
+
 }
+
+
 
 button[type="submit"]:hover{
 
+
     transform:translateY(-2px);
 
+
     box-shadow:
-    0 10px 20px rgba(34,197,94,.25);
+
+    0 10px 20px rgba(0,93,170,.3);
+
 }
+
+
+
+/* VOLVER */
 
 .btnVolver{
 
+
     margin-top:10px;
+
 
     background:#6b7280;
 
+
     color:white;
+
 }
+
+
 
 .btnVolver:hover{
 
+
     background:#4b5563;
+
 }
+
+
+
+/* GRUPO BOTONES */
 
 .botones{
 
+
     display:flex;
+
 
     gap:10px;
 
+
     margin-top:15px;
-}
-
-@media(max-width:768px){
-
-    .contenedor{
-
-        padding:25px;
-    }
-
-    h1{
-
-        font-size:1.6rem;
-    }
-
-    .botones{
-
-        flex-direction:column;
-    }
 
 }
+
+
+
+/* LISTAS */
+
 #listaSocios,
 #listaSimpatizantes{
 
+
     max-height:250px;
+
 
     overflow-y:auto;
 
-    border:1px solid #ddd;
 
-    border-radius:10px;
+    border:2px solid rgba(0,153,217,.25);
+
+
+    border-radius:12px;
+
 
     padding:15px;
 
+
     margin-bottom:15px;
+
+
+    background:rgba(255,255,255,.45);
+
 }
+
+
 
 #listaSocios label,
 #listaSimpatizantes label{
 
+
     display:block;
+
 
     margin-bottom:8px;
 
+
     cursor:pointer;
+
+
+    color:#333;
+
 }
+
+
+
+/* SUBTITULOS */
 
 h3{
 
+
     color:#0099d9;
+
 
     margin-top:15px;
 
+
     margin-bottom:10px;
+
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+
+    .contenedor{
+
+        padding:25px;
+
+    }
+
+
+    h1{
+
+        font-size:1.6rem;
+
+    }
+
+
+    .botones{
+
+        flex-direction:column;
+
+    }
+
 }
