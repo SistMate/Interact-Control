@@ -1,83 +1,106 @@
-<!DOCTYPE html>
-<html lang="es">
+import { db }
+from "./firebase-config.js";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interact Control - Inicio de Sesión</title>
+import {
+    collection,
+    getDocs,
+    deleteDoc,
+    doc
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
+const tabla =
+document.getElementById(
+    "tablaSimpatizantes"
+);
 
-<body>
+async function cargarSimpatizantes(){
 
-    <div class="login-container">
+    tabla.innerHTML = "";
 
-        <div class="login-card">
+    const querySnapshot =
+    await getDocs(
+        collection(
+            db,
+            "Simpatizante"
+        )
+    );
 
-            <div class="logo">
+    querySnapshot.forEach(
+        (documento)=>{
 
-                <!-- Reemplaza por tu logo -->
-                <img src="img/logo.png" alt="Logo Rotaract" class="logo-img">
+            const simpatizante =
+            documento.data();
 
-                <h1>INTERACT COCHABAMBA CONTROL</h1>
+            tabla.innerHTML += `
+            <tr>
 
-                
+                <td>
+                    ${simpatizante.NombreSimpatizante || ""}
+                </td>
 
-            </div>
+                <td>
+                    ${simpatizante.Celular || ""}
+                </td>
 
-            <div class="form-group">
+                <td>
+                    ${simpatizante.FechaIngreso || ""}
+                </td>
 
-                <label for="correo">
-                    Correo Electrónico
-                </label>
+                <td>
 
-                <input
-                    type="email"
-                    id="correo"
-                    placeholder="ejemplo@gmail.com">
+                    <button
+                        class="btnEditar"
+                        onclick="editarSimpatizante('${documento.id}')">
 
-            </div>
+                        Editar
 
-            <div class="form-group">
+                    </button>
 
-                <label for="password">
-                    Contraseña
-                </label>
+                    <button
+                        class="btnEliminar"
+                        onclick="eliminarSimpatizante('${documento.id}')">
+                        Eliminar
+                    </button>
 
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Ingrese su contraseña">
+                </td>
 
-            </div>
+            </tr>
+            `;
 
-            <button
-                id="btnLogin"
-                class="btn-login">
+        }
+    );
 
-                INICIAR SESIÓN
+}
 
-            </button>
+window.editarSimpatizante =
+function(id){
 
-            <div class="footer">
+    window.location.href =
+    `editar-simpatizante.html?id=${id}`;
 
-                <p>
-                    &copy; 2026 Interact Club Cochabamba
-                </p>
+}
 
-                <div class="version">
-                    Sistema de Control de Asistencia y Pagos v1.0 - 2026
-                </div>
+window.eliminarSimpatizante =
+async function(id){
 
-            </div>
+    const confirmar =
+    confirm(
+        "¿Desea eliminar este simpatizante?"
+    );
 
-        </div>
+    if(!confirmar) return;
 
-    </div>
+    await deleteDoc(
+        doc(
+            db,
+            "Simpatizante",
+            id
+        )
+    );
 
-    <script type="module" src="js/login.js"></script>
+    cargarSimpatizantes();
 
-</body>
+}
 
-</html>
+cargarSimpatizantes();
