@@ -1,106 +1,78 @@
-import { db }
-from "./firebase-config.js";
+<!DOCTYPE html>
+<html lang="es">
 
-import {
-    collection,
-    getDocs,
-    deleteDoc,
-    doc
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe´s Control - Inicio de Sesión</title>
 
-const tabla =
-document.getElementById(
-    "tablaSimpatizantes"
-);
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-async function cargarSimpatizantes(){
+<body>
 
-    tabla.innerHTML = "";
+    <div class="login-container">
+        
+        <div class="login-card">
+            <!--<img src="img/felipeLogo1.png" class="marca-agua">-->
+            <div class="logo">
 
-    const querySnapshot =
-    await getDocs(
-        collection(
-            db,
-            "Simpatizante"
-        )
-    );
+                <img src="img/logo.png" alt="Logo Rotaract" class="logo-img">
+                    <h1 class="logo-text">Felipe's Control</h1>
+                
 
-    querySnapshot.forEach(
-        (documento)=>{
+            </div>
 
-            const simpatizante =
-            documento.data();
+            <div class="form-group">
 
-            tabla.innerHTML += `
-            <tr>
+                <label for="correo">
+                    Correo Electrónico
+                </label>
 
-                <td>
-                    ${simpatizante.NombreSimpatizante || ""}
-                </td>
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="ejemplo@gmail.com">
 
-                <td>
-                    ${simpatizante.Celular || ""}
-                </td>
+            </div>
 
-                <td>
-                    ${simpatizante.FechaIngreso || ""}
-                </td>
+            <div class="form-group">
 
-                <td>
+                <label for="password">
+                    Contraseña
+                </label>
 
-                    <button
-                        class="btnEditar"
-                        onclick="editarSimpatizante('${documento.id}')">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Ingrese su contraseña">
 
-                        Editar
+            </div>
 
-                    </button>
+            <button
+                id="btnLogin"
+                class="btn-login">
 
-                    <button
-                        class="btnEliminar"
-                        onclick="eliminarSimpatizante('${documento.id}')">
-                        Eliminar
-                    </button>
+                INICIAR SESIÓN
 
-                </td>
+            </button>
 
-            </tr>
-            `;
+            <div class="footer">
 
-        }
-    );
+                <p>
+                    &copy; 2026 Interact Club Cochabamba
+                </p>
 
-}
+            </div>
+                
+        </div>
 
-window.editarSimpatizante =
-function(id){
+    </div>
 
-    window.location.href =
-    `editar-simpatizante.html?id=${id}`;
+    
 
-}
+    <script type="module" src="js/login.js"></script>
 
-window.eliminarSimpatizante =
-async function(id){
+</body>
 
-    const confirmar =
-    confirm(
-        "¿Desea eliminar este simpatizante?"
-    );
-
-    if(!confirmar) return;
-
-    await deleteDoc(
-        doc(
-            db,
-            "Simpatizante",
-            id
-        )
-    );
-
-    cargarSimpatizantes();
-
-}
-
-cargarSimpatizantes();
+</html>
