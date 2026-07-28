@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Historial de Pagos</title>
+
+    <link rel="stylesheet"
+          href="css/lista-pagos.css">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="cabecera">
+
+        <h1>
+
+            Historial de Pagos
+
+        </h1>
+
+        <button
+            class="btnVolver"
+            onclick="window.location.href='dashboard.html'">
+
+            ← Volver
+
+        </button>
+
+    </div>
+
+    <div class="filtros">
+
+        <input
+            type="text"
+            id="buscarSocio"
+            placeholder="Buscar socio...">
+
+        <input
+            type="month"
+            id="filtroMes">
+
+        <select id="filtroTipo">
+
+            <option value="">
+                Todos los tipos
+            </option>
+
+            <option value="QR">
+                QR
+            </option>
+
+            <option value="Efectivo">
+                Efectivo
+            </option>
+
+        </select>
+
+    </div>
+
+    <div class="tabla-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Socio</th>
+
+                    <th>Mes</th>
+
+                    <th>Monto</th>
+
+                    <th>Fecha</th>
+
+                    <th>Tipo</th>
+
+                    <th>Acción</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaPagos">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- MODAL -->
+
+<div
+    id="modalPago"
+    class="modal">
+
+    <div class="modal-contenido">
+
+        <span
+            class="cerrar"
+            id="cerrarModal">
+
+            &times;
+
+        </span>
+
+        <h2>
+
+            Detalle del Pago
+
+        </h2>
+
+        <p><strong>Socio:</strong> <span id="mSocio"></span></p>
+
+        <p><strong>Mes:</strong> <span id="mMes"></span></p>
+
+        <p><strong>Monto:</strong> Bs <span id="mMonto"></span></p>
+
+        <p><strong>Fecha:</strong> <span id="mFecha"></span></p>
+
+        <p><strong>Tipo:</strong> <span id="mTipo"></span></p>
+
+    </div>
+
+</div>
+
+<script
+    type="module"
+    src="js/historial-pagos.js">
+
+</script>
+
+</body>
+
+</html>

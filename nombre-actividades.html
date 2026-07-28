@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Actividades Registradas</title>
+
+    <link rel="stylesheet" href="css/actividades.css">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <div class="cabecera">
+
+        <h1>
+            Actividades Registradas
+        </h1>
+
+        <button
+            class="btnVolver"
+            onclick="window.location.href='dashboard.html'">
+
+            ← Volver
+
+        </button>
+
+    </div>
+
+    <div class="tabla-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Actividad</th>
+
+                    <th>Fecha</th>
+
+                    <th>Socios</th>
+
+                    <th>Simpatizantes</th>
+
+                    <th>Acción</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tablaActividades">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- ================= MODAL ================= -->
+
+<div
+    id="modalActividad"
+    class="modal">
+
+    <div class="modal-contenido">
+
+        <span
+            class="cerrar"
+            id="cerrarModal">
+
+            &times;
+
+        </span>
+
+        <h2 id="tituloActividad">
+
+        </h2>
+
+        <p id="fechaActividad">
+
+        </p>
+
+        <div class="listas">
+
+            <div class="columna">
+
+                <h3>
+
+                    Socios Asistentes
+
+                </h3>
+
+                <ul id="modalSocios">
+
+                </ul>
+
+            </div>
+
+            <div class="columna">
+
+                <h3>
+
+                    Simpatizantes Asistentes
+
+                </h3>
+
+                <ul id="modalSimpatizantes">
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script
+    type="module"
+    src="js/lista-actividades.js">
+</script>
+
+</body>
+
+</html>

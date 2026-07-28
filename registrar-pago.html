@@ -2,149 +2,129 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        Registrar Pago
-    </title>
-    <link rel="stylesheet" href="css/formularios.css">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar Pago</title>
+
+    <link rel="stylesheet"
+          href="css/formularios.css">
+
 </head>
 
 <body>
 
-    <div class="contenedor">
-        <h1>
-            Registrar Pago
-        </h1>
-        <form id="formPago">
-            <label>
-                Socio
-            </label>
-                <select id="nombreSocio" required>
-                    <option value="">
-                        Seleccione un socio
-                    </option>
-                </select>
-            <label>
-                Fecha
-            </label>
+<div class="contenedor">
 
-            <input type="date" id="fecha" required>
+    <h1>
 
-            <label>Concepto de Pago</label>
+        Registrar Pago
 
-            <select id="conceptoPago" required>
+    </h1>
 
-                <option value="">
-                    Seleccione...
-                </option>
+    <form id="formPago">
 
-                <option value="Cuota Enero">
-                    Cuota Enero
-                </option>
+        <label>Socio</label>
 
-                <option value="Cuota Febrero">
-                    Cuota Febrero
-                </option>
+        <select id="socio" required>
 
-                <option value="Cuota Marzo">
-                    Cuota Marzo
-                </option>
+            <option value="">
+                Seleccione un socio
+            </option>
 
-                <option value="Cuota Abril">
-                    Cuota Abril
-                </option>
+        </select>
 
-                <option value="Cuota Mayo">
-                    Cuota Mayo
-                </option>
+        <label>Monto (Bs.)</label>
 
-                <option value="Cuota Junio">
-                    Cuota Junio
-                </option>
+        <input
+            type="number"
+            id="monto"
+            min="0"
+            step="0.01"
+            required>
 
-                <option value="Cuota Julio">
-                    Cuota Julio
-                </option>
+        <label>Mes que corresponde el pago</label>
 
-                <option value="Cuota Agosto">
-                    Cuota Agosto
-                </option>
+        <input
+            type="month"
+            id="mesPago"
+            required>
 
-                <option value="Cuota Septiembre">
-                    Cuota Septiembre
-                </option>
+        <label>Fecha de pago</label>
 
-                <option value="Cuota Octubre">
-                    Cuota Octubre
-                </option>
+        <input
+            type="date"
+            id="fechaPago"
+            required>
 
-                <option value="Cuota Noviembre">
-                    Cuota Noviembre
-                </option>
+        <label>Tipo de Pago</label>
 
-                <option value="Cuota Diciembre">
-                    Cuota Diciembre
-                </option>
+        <select
+            id="tipoPago"
+            required>
 
-                <option value="Cuota Rotary International">
-                    Cuota Rotary International
-                </option>
+            <option value="">
+                Seleccione...
+            </option>
 
-                <option value="Cuota Distrital">
-                    Cuota Distrital
-                </option>
+            <option value="Efectivo">
+                Efectivo
+            </option>
 
-                <option value="Cuota AIRAC">
-                    Cuota AIRAC
-                </option>
+            <option value="QR">
+                QR
+            </option>
 
-                <option value="Otro">
-                    Otro
-                </option>
-            
-            <label>
-                Monto Pagado
-            </label>
+        </select>
 
-            <input type="number" id="montoPagado" placeholder="20" required>
+        <div
+            id="contenedorQR"
+            style="display:none; text-align:center;">
 
-                <label>Tipo de Pago</label>
-                <select id="tipoPago" required>
-                    <option value="">
-                        Seleccione...
-                    </option>
-                    <option value="QR">
-                        QR
-                    </option>
-                    <option value="Efectivo">
-                        Efectivo
-                    </option>
-                    <option value="Transferencia">
-                        Transferencia
-                    </option>
-            </select>
+            <h3>
 
-            <button type="submit">
+                Escanee el código QR
 
-                Registrar Pago
+            </h3>
 
-            </button>
-
-        </form>
-
-        <div class="botones">
-
-            <button class="btnVolver" onclick="window.location.href='dashboard.html'">
-                ← Volver
-            </button>
+            <img
+                src="img/qr.png"
+                alt="QR"
+                style="width:250px;">
 
         </div>
 
+        <button type="submit">
+
+            Registrar Pago
+
+        </button>
+
+    </form>
+
+    <div class="botones">
+
+        <button
+            type="button"
+            class="btnVolver"
+            onclick="window.location.href='dashboard.html'">
+
+            ← Volver
+
+        </button>
+
     </div>
 
-    <script type="module"src="js/registrar-pago.js">
-    </script>
+</div>
+
+<script
+    type="module"
+    src="js/registrar-pago.js">
+
+</script>
 
 </body>
 
