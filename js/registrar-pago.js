@@ -1,23 +1,29 @@
-import { db }
-from "./firebase-config.js";
+import { db } from "./firebase-config.js";
 
 import {
     collection,
     getDocs,
     addDoc,
     Timestamp
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-const form =
-document.getElementById(
-    "formPago"
-);
+const comboSocios =
+document.getElementById("socio");
 
-const selectSocio =
-document.getElementById(
-    "nombreSocio"
-);
+const tipoPago =
+document.getElementById("tipoPago");
+
+const contenedorQR =
+document.getElementById("contenedorQR");
+
+const formPago =
+document.getElementById("formPago");
+
+
+
+/* ==========================
+   CARGAR SOCIOS
+========================== */
 
 async function cargarSocios(){
 
@@ -27,31 +33,23 @@ async function cargarSocios(){
         await getDocs(
             collection(
                 db,
-                "Socios"
+                "socios"
             )
         );
 
-        selectSocio.innerHTML =
-        `
-        <option value="">
-            Seleccione un socio
-        </option>
-        `;
+        querySnapshot.forEach((documento)=>{
 
-        querySnapshot.forEach(
-            (documento)=>{
+            const socio =
+            documento.data();
 
-                const socio =
-                documento.data();
+            comboSocios.innerHTML +=
+            `
+            <option value="${socio["Nombre Completo"]}">
+                ${socio["Nombre Completo"]}
+            </option>
+            `;
 
-                selectSocio.innerHTML += `
-                <option value="${socio["Nombre Completo"]}">
-                    ${socio["Nombre Completo"]}
-                </option>
-                `;
-
-            }
-        );
+        });
 
     }
     catch(error){
@@ -59,7 +57,7 @@ async function cargarSocios(){
         console.error(error);
 
         alert(
-            "Error al cargar socios"
+            "No se pudieron cargar los socios."
         );
 
     }
@@ -68,7 +66,37 @@ async function cargarSocios(){
 
 cargarSocios();
 
-form.addEventListener(
+
+
+/* ==========================
+   MOSTRAR QR
+========================== */
+
+tipoPago.addEventListener(
+    "change",
+    ()=>{
+
+        if(tipoPago.value==="QR"){
+
+            contenedorQR.style.display="block";
+
+        }
+        else{
+
+            contenedorQR.style.display="none";
+
+        }
+
+    }
+);
+
+
+
+/* ==========================
+   REGISTRAR PAGO
+========================== */
+
+formPago.addEventListener(
     "submit",
     async(e)=>{
 
@@ -77,48 +105,56 @@ form.addEventListener(
         try{
 
             await addDoc(
+
                 collection(
                     db,
                     "Pagos"
                 ),
+
                 {
 
-                    nombreSocio:
+                    socio:
+                    comboSocios.value,
+
+                    monto:
+                    Number(
+                        document.getElementById(
+                            "monto"
+                        ).value
+                    ),
+
+                    mesPago:
                     document.getElementById(
-                        "nombreSocio"
+                        "mesPago"
                     ).value,
 
-                    fecha:
-                    document.getElementById(
-                        "fecha"
-                    ).value,
+                    fechaPago:
+                    Timestamp.fromDate(
 
-                    montoPagado:
-                    document.getElementById(
-                        "montoPagado"
-                    ).value,
+                        new Date(
+
+                            document.getElementById(
+                                "fechaPago"
+                            ).value
+
+                        )
+
+                    ),
 
                     tipoPago:
-                    document.getElementById(
-                        "tipoPago"
-                    ).value,
-
-                    conceptoPago:
-                    document.getElementById(
-                        "conceptoPago"
-                    ).value,
-
-                    fechaRegistro:
-                    Timestamp.now()
+                    tipoPago.value
 
                 }
+
             );
 
             alert(
-                "Pago registrado correctamente"
+                "Pago registrado correctamente."
             );
 
-            form.reset();
+            formPago.reset();
+
+            contenedorQR.style.display="none";
 
         }
         catch(error){
@@ -126,7 +162,7 @@ form.addEventListener(
             console.error(error);
 
             alert(
-                "Error al registrar pago"
+                "Ocurrió un error al registrar el pago."
             );
 
         }
