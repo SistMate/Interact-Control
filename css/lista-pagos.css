@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0099d9,
+        #0cb0eb,
+        #36c7fa
+    );
+
+    padding:30px;
+
+}
+
+/* ===========================
+        CONTENEDOR
+=========================== */
+
+.contenedor{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+    url("../img/felipeLogo5.png") center center / 40% no-repeat,
+    rgba(255,255,255,.90);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+    backdrop-filter:blur(10px);
+
+}
+
+/* ===========================
+        CABECERA
+=========================== */
+
+.cabecera{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+h1{
+
+    color:#0099d9;
+
+    font-size:2rem;
+
+}
+
+/* ===========================
+        FILTROS
+=========================== */
+
+.filtros{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.filtros input,
+.filtros select{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    outline:none;
+
+    background:transparent;
+
+    border:2px solid rgba(255,255,255,.6);
+
+    transition:.3s;
+
+    font-size:.95rem;
+
+}
+
+.filtros input:focus,
+.filtros select:focus{
+
+    background:white;
+
+    border-color:#0099d9;
+
+    box-shadow:
+    0 0 0 4px rgba(0,153,217,.15);
+
+}
+
+/* ===========================
+        TABLA
+=========================== */
+
+.tabla-container{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+
+    min-width:850px;
+
+    border-collapse:collapse;
+
+    background:rgba(255,255,255,.55);
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+thead{
+
+    background:
+    linear-gradient(
+        135deg,
+        #0099d9,
+        #0066cc
+    );
+
+    color:white;
+
+}
+
+thead th{
+
+    padding:16px;
+
+    text-align:center;
+
+}
+
+tbody td{
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+tbody tr{
+
+    border-bottom:
+    1px solid rgba(0,0,0,.08);
+
+    transition:.25s;
+
+}
+
+tbody tr:hover{
+
+    background:
+    rgba(0,153,217,.08);
+
+}
+
+/* ===========================
+        BOTONES
+=========================== */
+
+.btnVer{
+
+    border:none;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0099d9,
+        #0066cc
+    );
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btnVer:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 10px 20px rgba(0,93,170,.30);
+
+}
+
+.btnVolver{
+
+    border:none;
+
+    background:#6b7280;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btnVolver:hover{
+
+    background:#4b5563;
+
+}
+
+/* ===========================
+        MODAL
+=========================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(4px);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.modal-contenido{
+
+    width:90%;
+
+    max-width:550px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+    url("../img/felipeLogo5.png") center center / 45% no-repeat,
+    rgba(255,255,255,.95);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
+
+    position:relative;
+
+}
+
+.modal-contenido h2{
+
+    color:#0099d9;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+.modal-contenido p{
+
+    margin-bottom:12px;
+
+    font-size:1rem;
+
+    color:#333;
+
+}
+
+.modal-contenido strong{
+
+    color:#0099d9;
+
+}
+
+.cerrar{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    color:#777;
+
+    transition:.3s;
+
+}
+
+.cerrar:hover{
+
+    color:#dc2626;
+
+}
+
+/* ===========================
+        RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    .contenedor{
+
+        padding:20px;
+
+    }
+
+    .cabecera{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    h1{
+
+        text-align:center;
+
+        font-size:1.6rem;
+
+    }
+
+    .btnVolver{
+
+        width:100%;
+
+    }
+
+    table{
+
+        min-width:700px;
+
+    }
+
+}

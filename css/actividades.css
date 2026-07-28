@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #0099d9,
+        #0cb0eb,
+        #36c7fa
+    );
+
+    padding:30px;
+}
+
+.contenedor{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+    url("../img/felipeLogo5.png") center center / 40% no-repeat,
+    rgba(255,255,255,.90);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+    backdrop-filter:blur(10px);
+}
+
+.cabecera{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+h1{
+
+    color:#0099d9;
+
+    font-size:2rem;
+}
+
+.btnVolver{
+
+    border:none;
+
+    background:#6b7280;
+
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btnVolver:hover{
+
+    background:#4b5563;
+}
+
+.tabla-container{
+
+    overflow-x:auto;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:rgba(255,255,255,.65);
+
+    border-radius:15px;
+
+    overflow:hidden;
+}
+
+thead{
+
+    background:linear-gradient(
+        135deg,
+        #0099d9,
+        #0066cc
+    );
+
+    color:white;
+}
+
+th{
+
+    padding:15px;
+
+    text-align:center;
+
+    font-weight:600;
+}
+
+td{
+
+    padding:15px;
+
+    text-align:center;
+}
+
+tbody tr{
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+tbody tr:hover{
+
+    background:rgba(0,153,217,.08);
+}
+
+.btnVer{
+
+    border:none;
+
+    background:#0099d9;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.btnVer:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(0,153,217,.25);
+}
+
+@media(max-width:768px){
+
+    .cabecera{
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+    .btnVolver{
+
+        width:100%;
+    }
+
+    h1{
+
+        text-align:center;
+    }
+}
+
+/* ===========================
+            MODAL
+=========================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(4px);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999;
+
+}
+
+.modal-contenido{
+
+    width:90%;
+
+    max-width:700px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+    url("../img/felipeLogo5.png") center center / 45% no-repeat,
+    rgba(255,255,255,.95);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
+
+    position:relative;
+
+}
+
+.cerrar{
+
+    position:absolute;
+
+    right:20px;
+
+    top:15px;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    color:#666;
+
+    transition:.3s;
+
+}
+
+.cerrar:hover{
+
+    color:#dc2626;
+
+}
+
+.modal h2{
+
+    color:#0099d9;
+
+    margin-bottom:10px;
+
+}
+
+#fechaActividad{
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+    color:#555;
+
+}
+
+.listas{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.columna{
+
+    background:rgba(255,255,255,.6);
+
+    border-radius:15px;
+
+    padding:15px;
+
+}
+
+.columna h3{
+
+    color:#0099d9;
+
+    margin-bottom:12px;
+
+}
+
+.columna ul{
+
+    list-style:none;
+
+}
+
+.columna li{
+
+    padding:6px 0;
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+
+}
+
+.columna li:last-child{
+
+    border-bottom:none;
+
+}
+
+@media(max-width:700px){
+
+    .listas{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
