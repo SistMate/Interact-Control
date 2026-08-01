@@ -139,6 +139,8 @@ const mensajes = [
     "Nunca olvides de dónde vienes, ni a dónde quieres llegar.",
 
     "¡Felipe te acompaña en cada paso del camino!",
+    "Todo lo que eres capaz de soñar eres capaz de hacerlo",
+    "Fake it till you make it"
 ];
 
 // ==============================
